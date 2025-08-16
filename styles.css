@@ -15,7 +15,7 @@ body {
 header {
   background: linear-gradient(90deg, #ff4d4d, #ff7f50);
   padding: 20px 0;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 header .container {
@@ -34,7 +34,7 @@ header h1 {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 25px;
 }
 
 nav ul li a {
@@ -52,43 +52,41 @@ nav ul li a:hover {
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: 80px 20px;
+  padding: 100px 20px;
   background: linear-gradient(180deg, #1a1a1a, #2a2a2a);
+  border-radius: 20px;
+  margin: 20px;
+  box-shadow: inset 0 0 50px rgba(255,255,255,0.05);
 }
 
 .hero h2 {
-  font-size: 2.5em;
+  font-size: 3em;
   margin-bottom: 10px;
 }
 
 .hero p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
+  font-size: 1.3em;
+  margin-bottom: 30px;
 }
 
 .hero .buttons button {
   margin: 10px;
-  background-color: #4d79ff;
-  color: white;
   padding: 15px 30px;
   border: none;
-  border-radius: 8px;
-  cursor: pointer;
+  border-radius: 50px;
   font-size: 1em;
+  cursor: pointer;
+  background: linear-gradient(90deg,#4d79ff,#3355cc);
+  color: white;
   transition: 0.3s;
 }
 
 .hero .buttons button:hover {
-  background-color: #3355cc;
   transform: scale(1.05);
+  opacity: 0.9;
 }
 
-/* Videos Section */
-.videos {
-  padding: 50px 20px;
-  text-align: center;
-}
-
+/* Video Cards with Glassmorphism */
 .video-cards {
   display: flex;
   justify-content: center;
@@ -98,16 +96,18 @@ nav ul li a:hover {
 }
 
 .video-card {
-  background-color: #1f1f1f;
-  padding: 20px;
+  background: rgba(255,255,255,0.05);
   border-radius: 15px;
+  padding: 20px;
   width: 380px;
-  transition: 0.3s;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: transform .3s, box-shadow .3s;
 }
 
 .video-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
 .video-card h3 {
@@ -138,21 +138,23 @@ nav ul li a:hover {
 
 .carousel-controls {
   margin-top: 10px;
+  text-align: center;
 }
 
 .carousel-controls button {
-  background-color: #4d79ff;
+  background: linear-gradient(90deg,#4d79ff,#3355cc);
   color: white;
   border: none;
   padding: 8px 16px;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
   margin: 0 5px;
   transition: 0.3s;
 }
 
 .carousel-controls button:hover {
-  background-color: #3355cc;
+  transform: scale(1.1);
+  opacity: 0.9;
 }
 
 /* Social Section */
@@ -171,13 +173,13 @@ nav ul li a:hover {
 
 .social-btn {
   padding: 12px 25px;
-  border-radius: 8px;
+  border-radius: 50px;
   font-weight: bold;
   text-decoration: none;
   transition: 0.3s;
 }
 
-.social-btn.twitter { background-color: #1da1f2; color: white; }
+.social-btn.kick { background-color: #00a54f; color: white; }
 .social-btn.youtube { background-color: #ff0000; color: white; }
 .social-btn.discord { background-color: #7289da; color: white; }
 
@@ -192,4 +194,5 @@ footer {
   text-align: center;
   padding: 20px 0;
   margin-top: 50px;
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
