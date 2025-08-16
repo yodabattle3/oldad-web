@@ -8,6 +8,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div id="particles-js"></div>
+
   <header>
     <div class="container">
       <h1>OLDAD</h1>
@@ -34,11 +36,12 @@
     <section class="videos">
       <h2>Latest Content</h2>
       <div class="video-cards">
-        <div class="video-card" id="latest-live">
+        <div class="video-card glass" id="latest-live">
           <h3>Latest Live</h3>
           <div class="video-wrapper" id="live-video">Loading...</div>
         </div>
-        <div class="video-card" id="latest-shorts-carousel">
+
+        <div class="video-card glass" id="latest-shorts-carousel">
           <h3>Latest Shorts</h3>
           <div class="carousel-wrapper" id="shorts-carousel">Loading...</div>
           <div class="carousel-controls">
@@ -46,6 +49,15 @@
             <button id="next-short">▶</button>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="loadouts">
+      <h2>Loadouts</h2>
+      <div class="loadout-cards">
+        <div class="loadout-card glass">Loadout 1</div>
+        <div class="loadout-card glass">Loadout 2</div>
+        <div class="loadout-card glass">Loadout 3</div>
       </div>
     </section>
 
@@ -63,7 +75,7 @@
     <p>© 2025 OLDAD</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
-
