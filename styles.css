@@ -1,4 +1,4 @@
-/* Fonts & Reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -101,7 +101,7 @@ nav ul li a:hover {
   background-color: #1f1f1f;
   padding: 20px;
   border-radius: 15px;
-  width: 350px;
+  width: 380px;
   transition: 0.3s;
 }
 
@@ -114,11 +114,45 @@ nav ul li a:hover {
   margin-bottom: 15px;
 }
 
-.video-wrapper iframe {
+.video-wrapper iframe, .carousel-wrapper iframe {
   width: 100%;
   height: 220px;
   border: none;
   border-radius: 10px;
+}
+
+/* Shorts Carousel */
+.carousel-wrapper {
+  overflow: hidden;
+  position: relative;
+  height: 220px;
+}
+
+.carousel-wrapper .short-slide {
+  display: none;
+}
+
+.carousel-wrapper .short-slide.active {
+  display: block;
+}
+
+.carousel-controls {
+  margin-top: 10px;
+}
+
+.carousel-controls button {
+  background-color: #4d79ff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: 0.3s;
+}
+
+.carousel-controls button:hover {
+  background-color: #3355cc;
 }
 
 /* Social Section */
