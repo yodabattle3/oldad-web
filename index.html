@@ -1,1 +1,68 @@
-aaaaa
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OLDAD</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>OLDAD</h1>
+      <nav>
+        <ul>
+          <li><a href="#" id="homeBtn">Home</a></li>
+          <li><a href="#" id="loadoutsBtn">Loadouts</a></li>
+          <li><a href="#" id="profileBtn">Profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Welcome to OLDAD</h2>
+      <p>Your hub for latest live streams, shorts, and loadouts!</p>
+      <div class="buttons">
+        <button id="profileBtnHero">Visit Profile</button>
+        <button id="loadoutsBtnHero">View Loadouts</button>
+      </div>
+    </section>
+
+    <section class="videos">
+      <h2>Latest Content</h2>
+      <div class="video-cards">
+        <div class="video-card" id="latest-live">
+          <h3>Latest Live</h3>
+          <div class="video-wrapper" id="live-video">Loading...</div>
+        </div>
+        <div class="video-card" id="latest-shorts-carousel">
+          <h3>Latest Shorts</h3>
+          <div class="carousel-wrapper" id="shorts-carousel">Loading...</div>
+          <div class="carousel-controls">
+            <button id="prev-short">◀</button>
+            <button id="next-short">▶</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="socials">
+      <h2>Follow OLDAD</h2>
+      <div class="social-buttons">
+        <a href="https://twitter.com/OLDAD_" target="_blank" class="social-btn twitter">Twitter</a>
+        <a href="https://youtube.com/@OLDAD_" target="_blank" class="social-btn youtube">YouTube</a>
+        <a href="https://discord.gg/OLDAD" target="_blank" class="social-btn discord">Discord</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 OLDAD</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
