@@ -1,0 +1,15 @@
+:root {
+  /* 🎨 Theme Colors (from PFP) */
+  --bg-color: #0a0014;         /* dark purple/black background */
+  --header-bg: #150028;        /* deep purple header */
+  --text-color: #ffffff;       /* white text */
+  --accent-color: #39ff14;     /* neon green */
+  --accent-hover: #ff00cc;     /* neon magenta hover */
+
+  /* ✨ Fonts */
+  --font-main: 'Arial', sans-serif;
+  --font-heading: 'Orbitron', sans-serif; /* retro sci-fi */
+
+  /* 📏 Layout */
+  --max-width: 600px;
+}
