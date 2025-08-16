@@ -5,29 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OLDAD</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1>OLDAD</h1>
-    <nav>
-      <ul>
-        <li><a href="#" id="homeBtn">Home</a></li>
-        <li><a href="#" id="loadoutsBtn">Loadouts</a></li>
-        <li><a href="#" id="profileBtn">Profile</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <h1>OLDAD</h1>
+      <nav>
+        <ul>
+          <li><a href="#" id="homeBtn">Home</a></li>
+          <li><a href="#" id="loadoutsBtn">Loadouts</a></li>
+          <li><a href="#" id="profileBtn">Profile</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section id="content">
-      <h2>Latest Content</h2>
-      <div class="video-section" id="latest-live">
-        <h3>Latest Live</h3>
-        <div class="video-wrapper" id="live-video">Loading...</div>
+    <section class="hero">
+      <h2>Welcome to OLDAD</h2>
+      <p>Your hub for latest live streams, shorts, and loadouts!</p>
+      <div class="buttons">
+        <button id="profileBtnHero">Visit Profile</button>
+        <button id="loadoutsBtnHero">View Loadouts</button>
       </div>
-      <div class="video-section" id="latest-short">
-        <h3>Latest Short</h3>
-        <div class="video-wrapper" id="short-video">Loading...</div>
+    </section>
+
+    <section class="videos">
+      <h2>Latest Content</h2>
+      <div class="video-cards">
+        <div class="video-card" id="latest-live">
+          <h3>Latest Live</h3>
+          <div class="video-wrapper" id="live-video">Loading...</div>
+        </div>
+        <div class="video-card" id="latest-short">
+          <h3>Latest Short</h3>
+          <div class="video-wrapper" id="short-video">Loading...</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="socials">
+      <h2>Follow OLDAD</h2>
+      <div class="social-buttons">
+        <a href="https://twitter.com/OLDAD_" target="_blank" class="social-btn twitter">Twitter</a>
+        <a href="https://youtube.com/@OLDAD_" target="_blank" class="social-btn youtube">YouTube</a>
+        <a href="https://discord.gg/OLDAD" target="_blank" class="social-btn discord">Discord</a>
       </div>
     </section>
   </main>
