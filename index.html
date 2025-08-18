@@ -85,6 +85,39 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* === SOCIAL BUTTONS === */
+    .socials {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .social-btn {
+      padding: 12px 22px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      color: #fff;
+      box-shadow: 0 0 12px #39ff14;
+    }
+
+    .social-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 20px #ff00ff, 0 0 40px #39ff14;
+    }
+
+    .youtube { background: #ff0000; }
+    .twitch { background: #9146ff; }
+    .kick { background: #39ff14; color: #000; }
+    .discord { background: #5865f2; }
   </style>
 </head>
 <body>
@@ -101,9 +134,13 @@
   </main>
 
   <footer>
-    <p>Made with 💚 + ☄️ by OLDAD — 
-      <a href="https://www.youtube.com/@OLDAD_" target="_blank">Subscribe</a>
-    </p>
+    <div class="socials">
+      <a href="https://www.youtube.com/@OLDAD_" target="_blank" class="social-btn youtube">YouTube</a>
+      <a href="https://www.twitch.tv/oldad_" target="_blank" class="social-btn twitch">Twitch</a>
+      <a href="https://kick.com/oldadd" target="_blank" class="social-btn kick">Kick</a>
+      <a href="https://discord.gg/dc4a82jxkE" target="_blank" class="social-btn discord">Discord</a>
+    </div>
+    <p>Made with 💚 + ☄️ by OLDAD</p>
   </footer>
 
   <script>
@@ -112,7 +149,6 @@
 
     async function fetchLatest() {
       try {
-        // 🔍 Step 1: Get latest videos
         const res = await fetch(
           `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=10`
         );
@@ -121,23 +157,17 @@
         let latestLive = null;
         let latestShort = null;
 
-        // 🔍 Step 2: Check each video
         for (let item of data.items) {
           if (item.id.kind === "youtube#video") {
-            // If it's live
             if (item.snippet.liveBroadcastContent === "live" && !latestLive) {
               latestLive = item.id.videoId;
             }
-
-            // Try to fetch details to check duration
             if (!latestShort) {
               const videoDetailsRes = await fetch(
                 `https://www.googleapis.com/youtube/v3/videos?key=${API_KEY}&id=${item.id.videoId}&part=contentDetails`
               );
               const details = await videoDetailsRes.json();
               const duration = details.items[0].contentDetails.duration;
-
-              // Convert ISO 8601 duration (PT#M#S) → seconds
               const seconds = isoDurationToSeconds(duration);
               if (seconds <= 60) {
                 latestShort = item.id.videoId;
@@ -146,7 +176,6 @@
           }
         }
 
-        // 🔴 Show Live
         if (latestLive) {
           document.getElementById("latest-live").innerHTML =
             `<iframe src="https://www.youtube.com/embed/${latestLive}" allowfullscreen></iframe>`;
@@ -155,7 +184,6 @@
             `<p class="error">No live currently.</p>`;
         }
 
-        // 🎬 Show Short
         if (latestShort) {
           document.getElementById("latest-short").innerHTML =
             `<iframe src="https://www.youtube.com/embed/${latestShort}" allowfullscreen></iframe>`;
@@ -171,7 +199,6 @@
       }
     }
 
-    // Utility: Convert ISO 8601 (PT#M#S) → total seconds
     function isoDurationToSeconds(duration) {
       const match = duration.match(/PT(?:(\d+)M)?(?:(\d+)S)?/);
       const minutes = parseInt(match[1] || "0");
